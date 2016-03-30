@@ -75,19 +75,17 @@
                                 <color key="textColor" red="0.0" green="0.20000000000000001" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bCK-ZX-nVN">
-                                <rect key="frame" x="0.0" y="90" width="160" height="196"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="196" id="CDZ-wl-RyA"/>
-                                </constraints>
-                            </pickerView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ECk-Lb-NYb">
+                            <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ECk-Lb-NYb">
                                 <rect key="frame" x="160" y="90" width="160" height="196"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="196" id="ni2-Ef-0Xf"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="3g3-Nz-S72"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Hei-36-VLa"/>
+                                </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Run" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3b-wx-mTG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3b-wx-mTG">
                                 <rect key="frame" x="-4" y="56" width="164" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="AcB-0v-Cvn"/>
@@ -96,7 +94,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9UB-np-gHL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Run" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9UB-np-gHL">
                                 <rect key="frame" x="160" y="56" width="164" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="t1J-Jf-lRP"/>
@@ -105,6 +103,16 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bCK-ZX-nVN">
+                                <rect key="frame" x="0.0" y="90" width="160" height="196"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="196" id="CDZ-wl-RyA"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="sI9-zZ-lcO"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="TgC-MF-NV6"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -149,6 +157,8 @@
                         <outlet property="labelCriticalHeartRate" destination="Gto-Aa-6cV" id="0rt-k4-uo5"/>
                         <outlet property="labelCurrentHeartRate" destination="QAl-x8-4IW" id="0lP-wE-1ub"/>
                         <outlet property="labelRestHeartRate" destination="Hpf-vE-3Re" id="JwE-sS-I7X"/>
+                        <outlet property="pickerRest" destination="bCK-ZX-nVN" id="Fjq-Hd-hAQ"/>
+                        <outlet property="pickerRun" destination="ECk-Lb-NYb" id="vw2-27-uTC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		970DFF131CAC28FF00F96492 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 970DFF121CAC28FF00F96492 /* beep.wav */; };
 		9726802C1CA4505000517896 /* H7Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9726802B1CA4505000517896 /* H7Engine.m */; };
 		97668AF91CA43B4000B10AEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97668AF81CA43B4000B10AEB /* main.m */; };
 		97668AFC1CA43B4000B10AEB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97668AFB1CA43B4000B10AEB /* AppDelegate.m */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		970DFF121CAC28FF00F96492 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
 		9726802A1CA4505000517896 /* H7Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7Engine.h; sourceTree = "<group>"; };
 		9726802B1CA4505000517896 /* H7Engine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7Engine.m; sourceTree = "<group>"; };
 		97668AF41CA43B4000B10AEB /* ARunning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARunning.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +44,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		970DFF111CAC28FF00F96492 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				970DFF121CAC28FF00F96492 /* beep.wav */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		97668AEB1CA43B4000B10AEB = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +89,7 @@
 		97668AF71CA43B4000B10AEB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				970DFF111CAC28FF00F96492 /* Resources */,
 				97668AF81CA43B4000B10AEB /* main.m */,
 			);
 			name = "Supporting Files";
@@ -141,6 +152,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				970DFF131CAC28FF00F96492 /* beep.wav in Resources */,
 				97668B071CA43B4000B10AEB /* LaunchScreen.storyboard in Resources */,
 				97668B041CA43B4000B10AEB /* Assets.xcassets in Resources */,
 				97668B021CA43B4000B10AEB /* Main.storyboard in Resources */,
