@@ -119,7 +119,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.0KM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jht-KA-nHO">
                                 <rect key="frame" x="86" y="374" width="148" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Run" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9UB-np-gHL">
@@ -180,6 +180,7 @@
                     <connections>
                         <outlet property="labelCriticalHeartRate" destination="Gto-Aa-6cV" id="0rt-k4-uo5"/>
                         <outlet property="labelCurrentHeartRate" destination="QAl-x8-4IW" id="0lP-wE-1ub"/>
+                        <outlet property="labelDistance" destination="jht-KA-nHO" id="vcg-wg-gXa"/>
                         <outlet property="labelRestHeartRate" destination="Hpf-vE-3Re" id="JwE-sS-I7X"/>
                         <outlet property="pickerRest" destination="bCK-ZX-nVN" id="Fjq-Hd-hAQ"/>
                         <outlet property="pickerRun" destination="ECk-Lb-NYb" id="vw2-27-uTC"/>

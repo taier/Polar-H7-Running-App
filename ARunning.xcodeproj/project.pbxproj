@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0824F940FB74FAA48FF9350F /* libPods-ARunning.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8A70C3ED31286E29195350 /* libPods-ARunning.a */; };
 		970DFF131CAC28FF00F96492 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 970DFF121CAC28FF00F96492 /* beep.wav */; };
 		9726802C1CA4505000517896 /* H7Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9726802B1CA4505000517896 /* H7Engine.m */; };
 		97668AF91CA43B4000B10AEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97668AF81CA43B4000B10AEB /* main.m */; };
@@ -18,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B8A70C3ED31286E29195350 /* libPods-ARunning.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ARunning.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		829111637D49557402162BCC /* Pods-ARunning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARunning.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARunning/Pods-ARunning.release.xcconfig"; sourceTree = "<group>"; };
+		90F3B79CF5C57F1CA52A8730 /* Pods-ARunning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARunning.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARunning/Pods-ARunning.debug.xcconfig"; sourceTree = "<group>"; };
 		970DFF121CAC28FF00F96492 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
 		9726802A1CA4505000517896 /* H7Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7Engine.h; sourceTree = "<group>"; };
 		9726802B1CA4505000517896 /* H7Engine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7Engine.m; sourceTree = "<group>"; };
@@ -38,12 +42,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0824F940FB74FAA48FF9350F /* libPods-ARunning.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51490D6D14683AEC8BE0D8C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B8A70C3ED31286E29195350 /* libPods-ARunning.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8D23B909252C3BC95FCDDC42 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90F3B79CF5C57F1CA52A8730 /* Pods-ARunning.debug.xcconfig */,
+				829111637D49557402162BCC /* Pods-ARunning.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		970DFF111CAC28FF00F96492 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +79,8 @@
 			children = (
 				97668AF61CA43B4000B10AEB /* ARunning */,
 				97668AF51CA43B4000B10AEB /* Products */,
+				8D23B909252C3BC95FCDDC42 /* Pods */,
+				51490D6D14683AEC8BE0D8C1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,9 +126,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97668B0B1CA43B4000B10AEB /* Build configuration list for PBXNativeTarget "ARunning" */;
 			buildPhases = (
+				C145329B850CEF022AA32EA7 /* Check Pods Manifest.lock */,
 				97668AF01CA43B4000B10AEB /* Sources */,
 				97668AF11CA43B4000B10AEB /* Frameworks */,
 				97668AF21CA43B4000B10AEB /* Resources */,
+				1D5D18C2F2BB032151358A49 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -160,6 +186,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D5D18C2F2BB032151358A49 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARunning/Pods-ARunning-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C145329B850CEF022AA32EA7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		97668AF01CA43B4000B10AEB /* Sources */ = {
@@ -277,6 +336,7 @@
 		};
 		97668B0C1CA43B4000B10AEB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90F3B79CF5C57F1CA52A8730 /* Pods-ARunning.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ARunning/Info.plist;
@@ -288,6 +348,7 @@
 		};
 		97668B0D1CA43B4000B10AEB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 829111637D49557402162BCC /* Pods-ARunning.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ARunning/Info.plist;

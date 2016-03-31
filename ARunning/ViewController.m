@@ -8,21 +8,22 @@
 
 #import "ViewController.h"
 #import "H7Engine.h"
+#import "Follower.h"
 
 // For sound
 #import <AudioToolbox/AudioToolbox.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface ViewController () <H7EngineDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
+@interface ViewController () <H7EngineDelegate, UIPickerViewDataSource, UIPickerViewDelegate, FollowerDelegate>
 
 @property H7Engine* h7Engine;
 @property (strong, nonatomic) IBOutlet UILabel *labelCurrentHeartRate;
 @property (strong, nonatomic) IBOutlet UILabel *labelRestHeartRate;
 @property (strong, nonatomic) IBOutlet UILabel *labelCriticalHeartRate;
+@property (strong, nonatomic) IBOutlet UILabel *labelDistance;
 
 @property (strong, nonatomic) IBOutlet UIPickerView *pickerRest;
 @property (strong, nonatomic) IBOutlet UIPickerView *pickerRun;
-
 
 @property (assign, nonatomic) int heartRateRest;
 @property (assign, nonatomic) int heartRateCritical;
@@ -31,6 +32,7 @@
 @property (assign, nonatomic) bool inZoneCritical;
 
 @property (strong, nonatomic) AVAudioPlayer *player;
+@property (strong, nonatomic) Follower *follower;
 
 @property (strong, nonatomic) NSMutableArray *pickerDataArray;
 
@@ -133,6 +135,23 @@
 
 - (IBAction)onStartButtonPress:(id)sender {
     
+    if (!self.follower) {
+        self.follower = [Follower new];
+        self.follower.delegate = self;
+    }
+    
+    if(self.follower.trackingState != TrackingStateTracking) {
+        [self.follower beginRouteTracking];
+    }
+    
+}
+
+#pragma mark Follower delegates
+
+- (void)followerDidUpdate:(Follower *)follower {
+    CLLocationDistance distance = [self.follower totalDistanceWithUnit:DistanceUnitMeters];
+    NSString *distanceString = [[NSString alloc] initWithFormat: @"%f", distance];
+    self.labelDistance.text = distanceString;
 }
 
 #pragma mark Heart Rate Delegates
