@@ -131,6 +131,10 @@
     }
 }
 
+- (IBAction)onStartButtonPress:(id)sender {
+    
+}
+
 #pragma mark Heart Rate Delegates
 
 - (void)heartRateChanged:(int)heartRate {
